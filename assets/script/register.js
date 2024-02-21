@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import { getDatabase, get, ref } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-
 // Import the functions to get Google Analysts
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -33,6 +32,8 @@ let EmailInp = document.getElementById("emailInp");
 let PassInp = document.getElementById("passwordInp");
 let FnameInp = document.getElementById("fnameInp");
 let LnameInp = document.getElementById("lnameInp");
+let RegisterScreen = document.getElementById("registerScreen");
+
 
 // Creating a function to Register a new user.
 let RegisterUser = evt => {
@@ -48,9 +49,11 @@ let RegisterUser = evt => {
         console.log(error.code);
         console.log(error.message);
       })
-
 }
 
+RegisterScreen.addEventListener("submit", (evt)=>{
+    RegisterUser(evt);
+})
 
 
 
