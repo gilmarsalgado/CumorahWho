@@ -1,0 +1,81 @@
+
+:root {
+    --color_orange: #d35e2e;
+    --color_white: #d2dff1;
+    --color_blue: #065989;
+    --color_lightblue: #6bb2b6;
+    --color_gray: #adb6b7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-image: linear-gradient(135deg, var(--color_lightblue) , var(--color_blue));
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+#main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#thankyouScreen {
+    background-color: var(--color_white);
+    width: 600px;
+    height: 350px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+}
+
+#title{
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#title_img {
+    width: 70%;
+}
+
+#back_button {
+    display: flex;
+    align-items: center;
+    transition: all 0.9s ease;
+    border-radius: 30px;
+
+}
+
+#back_button_img {
+    width: 30px;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+#back_button:hover {
+    color: var(--color_white);
+    background-image: linear-gradient(135deg, var(--color_lightblue) , var(--color_blue));
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 10px;
+    border-radius: 30px;
+    
+}
+
+footer{
+    font-size: 14px;
+    color: var(--color_white);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
