@@ -3,8 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-
-
 // Import the functions to get Google Analysts
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,3 +23,35 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+// Initialize Database
+const db = getDatabase();
+const auth = getAuth(app);
+const dbref = ref(db);
+
+// Assigning the elements to variables
+let EmailInp = document.getElementById("emailInp");
+let PassInp = document.getElementById("passwordInp");
+let FnameInp = document.getElementById("fnameInp");
+let LnameInp = document.getElementById("lnameInp");
+let RegisterScreen = document.getElementById("registerScreen");
+
+
+// Creating a function to Register a new user.
+let SignInUser = evt => {
+    evt.preventDefault();
+    // Creating the User using the credentials and the variables assigned Below
+    signInWithEmailAndPassword(auth,EmailInp.value, PassInp.value)
+    .then((credentials)=>{
+        console.log(credentials);
+    })
+    // Creating a error messages to show up if something go wrong
+    .catch((error)=>{
+        alert(error.message);
+        console.log(error.code);
+        console.log(error.message);
+      })
+}
+
+RegisterScreen.addEventListener("submit", (evt)=>{
+    SignInUser(evt);
+})
