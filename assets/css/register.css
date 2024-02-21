@@ -89,6 +89,12 @@ input{
  /* por transition and transform*/
 }
 
+#login button{
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
 
 
 footer{

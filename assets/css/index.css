@@ -89,7 +89,11 @@ input{
  /* por transition and transform*/
 }
 
-
+#login button{
+    background-color: inherit;
+    border: none;
+    color: inherit;
+}
 
 footer{
     font-size: 14px;
